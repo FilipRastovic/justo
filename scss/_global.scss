@@ -1,22 +1,34 @@
 // Global styling for this template
-body {
-  overflow-x: hidden;
-  @include body-font;
+body,
+html {
+  width: 100%;
+  height: 100%;
+  @media (max-width: 450px) {
+    overflow-x: hidden;
+  }
 }
 
-p {
-  line-height: 1.75;
+body {
+  font-family: 'Montserrat', sans-serif;
+  
+}
+
+hr {
+  max-width: 50px;
+  border-width: 3px;
+  border-color: $primary;
+}
+
+hr.light {
+  border-color: $white;
 }
 
 a {
   color: $primary;
+  @include transition-all;
   &:hover {
-    color: darken($primary, 10%);
+    color: darken($primary, .1);
   }
-}
-
-.text-primary {
-  color: $primary !important;
 }
 
 h1,
@@ -25,74 +37,159 @@ h3,
 h4,
 h5,
 h6 {
-  font-weight: 700;
-  @include heading-font;
+  @include sans-serif-font;
+}
+
+.bg-primary {
+  background-color: $primary !important;
+}
+
+.bg-dark {
+  background-color: $gray-900 !important;
+}
+
+.text-faded {
+  color: fade-out($white, .3);
 }
 
 section {
-  padding: 100px 0;
-  h2.section-heading {
-    font-size: 40px;
-    margin-top: 0;
-    margin-bottom: 15px;
-  }
-  h3.section-subheading {
-    font-size: 16px;
-    font-weight: 400;
-    font-style: italic;
-    margin-bottom: 75px;
-    text-transform: none;
-    @include serif-font;
-  }
-}
-@media(min-width:768px) {
-  section {
-    padding: 150px 0;
-  }
+  padding: 8rem 0;
 }
 
-// Button Styles
-.btn {
-  @include heading-font;
-  font-weight: 700;
+.section-heading {
+  margin-top: 0;
 }
 
-.btn-xl {
-  font-size: 18px;
-  padding: 20px 40px;
-}
-
-.btn-primary {
-  background-color: $primary;
-  border-color: $primary;
-  &:active,
-  &:focus,
-  &:hover {
-    background-color: darken($primary, 7.5%) !important;
-    border-color: darken($primary, 7.5%) !important;
-    color: white;
-  }
-  &:active,
-  &:focus {
-    box-shadow: 0 0 0 0.2rem rgba(254, 209, 55,.5) !important;
-  }
-}
-
-// Highlight color customization
 ::-moz-selection {
-  background: $primary;
+  color: $white;
+  background: $gray-900;
   text-shadow: none;
 }
 
 ::selection {
-  background: $primary;
+  color: $white;
+  background: $gray-900;
   text-shadow: none;
 }
 
 img::selection {
+  color: $white;
   background: transparent;
 }
 
 img::-moz-selection {
+  color: $white;
   background: transparent;
+}
+
+.subtitle {
+  font-weight: 900;
+  color: $brand-dark;
+  font-size: 3rem;
+  @media (max-width: 450px) {
+    font-size: 2rem;
+  }
+}
+
+.subtitle--invert {
+  color: white;
+}
+
+.my-4 {
+  color: white;
+  border-color: white;
+}
+
+.sell-img {
+  @media (min-width: 1200px) {
+    width: 30%;
+    margin-left: 20px;
+  }
+
+  @media (max-width: 450px) {
+    width: 60px;
+  }
+}
+
+.sell-img-wrapper {
+  @media (max-width: 450px) {
+    text-align: center !important;
+  }
+}
+.brand-paragraph {
+  font-weight: 300;
+  color: $brand-dark;
+  font-size: 16px;
+  line-height: 22px;
+
+  @media (max-width:450px) {
+    padding: 10px;
+  }
+}
+
+.brand-paragraph--strong {
+  font-weight: 600;
+}
+
+.fa-check {
+  color: green;
+}
+
+.fa-times {
+  color: red;
+}
+
+.sr-contact-1,
+.sr-contact-2 {
+  color: #008C82 !important;
+}
+
+#calc {
+  padding-top: 6rem;
+}
+
+
+
+#myBtn {
+  display: block; /* Hidden by default */
+  position: fixed; /* Fixed/sticky position */
+  bottom: 20px; /* Place the button at the bottom of the page */
+  right: 30px; /* Place the button 30px from the right */
+  z-index: 99; /* Make sure it does not overlap */
+  border: none; /* Remove borders */
+  outline: none; /* Remove outline */
+  background-color: $primary; /* Set a background color */
+  color: white; /* Text color */
+  cursor: pointer; /* Add a mouse pointer on hover */
+  padding: 15px; /* Some padding */
+  border-radius: 10px; /* Rounded corners */
+  font-size: 18px; /* Increase font size */
+}
+
+#myBtn:hover {
+  background-color: lighten($primary, 10%); /* Add a dark-grey background on hover */
+}
+
+#calc {
+  @media (max-width: 450px) {
+    .container-fluid {
+      padding-left: 0;
+      padding-right: 0;
+    }
+  }
+}
+
+.grey-background--mobile {
+  @media (max-width: 45px){ 
+    background: $brand-background;
+  }
+}
+
+.megan-contact {
+  border-radius: 300px;
+  width: 200px;
+
+  @media (max-width: 991px) {
+    margin-bottom: 25px;
+  }
 }

@@ -1,17 +1,46 @@
+.contact-noform {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+    background: #f9fbfa;
+    color: $brand-dark !important;
+    padding-bottom: 5rem;
+    padding-top: 5rem;
+    p {
+      font-weight: 600;
+    }
+
+    a {
+      color: $brand-dark !important;
+      font-size: 26px;
+    }
+  }
+
+.contact-noform-bot {
+  padding-top: 150px;
+}
+  
 // Styling for the contact section
-section#contact {
-  background-color: $gray-900;
-  background-image: url('../img/map-image.png');
+section#contact,
+.contact {
+  background: white;
+  padding-bottom: 4rem;
+  padding-top: 5rem;
   background-repeat: no-repeat;
   background-position: center;
+  p {
+    font-weight: 600;
+    color: $brand-dark;
+  }
   .section-heading {
-    color: $white;
+    color: $black;
   }
   .form-group {
     margin-bottom: 25px;
     input,
     textarea {
       padding: 20px;
+      background: rgba(221, 221, 221, 0.5);
+      border: none;
     }
     input.form-control {
       height: auto;
@@ -25,23 +54,19 @@ section#contact {
     box-shadow: none;
   }
   ::-webkit-input-placeholder {
-    font-weight: 700;
-    color: $gray-400;
-    @include heading-font;
+    font-weight: 600;
+    color: lighten($brand-grey, 10%);
   }
   :-moz-placeholder {
-    font-weight: 700;
-    color: $gray-400;
-    @include heading-font;
+    font-weight: 600;
+    color: lighten($brand-grey, 10%);
   }
   ::-moz-placeholder {
-    font-weight: 700;
-    color: $gray-400;
-    @include heading-font;
+    font-weight: 600;
+    color: lighten($brand-grey, 10%);
   }
   :-ms-input-placeholder {
-    font-weight: 700;
-    color: $gray-400;
-    @include heading-font;
+    font-weight: 600;
+    color: lighten($brand-grey, 10%);
   }
 }
